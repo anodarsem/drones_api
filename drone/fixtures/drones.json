@@ -1,0 +1,9 @@
+[
+  {"model": "drone.drone", "pk": 1, "fields":
+    {"serial_number": "0001", "model": "Lightweight", "weight_limit": 250, "battery_capacity": 20, "state": "IDLE"}},
+  {"model": "drone.drone", "pk": 2, "fields":
+    {"serial_number": "0002", "model": "Middleweight", "weight_limit": 250, "battery_capacity": 60, "state": "LOADED"}},
+  {"model": "drone.drone", "pk": 3, "fields":
+    {"serial_number": "0003", "model": "Cruiserweight", "weight_limit": 400, "battery_capacity": 80, "state": "IDLE"}},
+  {"model": "drone.drone", "pk": 4, "fields":
+    {"serial_number": "0004", "model": "Heavyweight", "weight_limit": 500, "battery_capacity": 90, "state": "DELIVERED"}}]

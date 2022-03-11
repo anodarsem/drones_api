@@ -1,0 +1,8 @@
+[{"model": "load.medication", "pk": 1, "fields":
+    {"weight": 150, "drone": null, "name": "MED_1", "code": "101", "image": "loads/medications/default_VIQYyoW.jpg"}},
+  {"model": "load.medication", "pk": 2, "fields":
+    {"weight": 200, "drone": null, "name": "MED_2", "code": "102", "image": "loads/medications/default_1ZWTC3j.jpg"}},
+  {"model": "load.medication", "pk": 3, "fields":
+    {"weight": 260, "drone": null, "name": "MED_3", "code": "103", "image": "loads/medications/default_SPHqLX2.jpg"}},
+  {"model": "load.medication", "pk": 4, "fields":
+    {"weight": 160, "drone": null, "name": "MED_4", "code": "104", "image": "loads/medications/default_K4hljfx.jpg"}}]

@@ -14,11 +14,6 @@ python -m venv venv
 
 - Activate virtualenv
 
-```bash
-cd venv/Scripts/activate
-cd drones_api
-```
-
 - Install dependencies
 
 ```bash

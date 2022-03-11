@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
+    'django_crontab',
     'drone',
     'load'
 ]
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'drones_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':  [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,5 +137,12 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': [
+        'rest_framework.schemas.coreapi.AutoSchema',
+    ],
 }
+
+CRONJOBS = [
+    ('*/2 * * * *', 'drone.tasks.check_drone_battery_level')
+]

@@ -2,6 +2,8 @@ from django.urls import path
 
 from drone.views import DroneView, DroneLoadView, DroneLoadedMedicationView
 
+app_name = 'drone'
+
 urlpatterns = [
     path('register', DroneView.as_view({'post': 'register'}), name='register_drone'),
     path('available_drones', DroneView.as_view({'get': 'check_available_drones'}), name='check_available_drones'),

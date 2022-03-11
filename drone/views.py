@@ -35,7 +35,7 @@ class DroneView(viewsets.ModelViewSet):
         try:
             battery_level = Drone.objects.get(pk=pk)
             serializer = DroneSerializer(battery_level, many=False)
-            return Response(serializer.data['battery_capacity'], status=status.HTTP_200_OK)
+            return Response({'battery_capacity':serializer.data['battery_capacity']}, status=status.HTTP_200_OK)
         except Drone.DoesNotExist:
             return Response('Drone pk does not exist', status=status.HTTP_404_NOT_FOUND)
 
@@ -62,6 +62,8 @@ class DroneLoadView(APIView):
             if drone.state in ["LOADING", "IDLE"]:
                 if can_be_loaded_weight(drone, medication):
                     if can_be_loaded_battery_level(drone):
+                        drone.state = "LOADING"
+                        drone.save()
                         medication.update(drone=drone)
                         drone.state = "LOADED"
                         drone.save()
